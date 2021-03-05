@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from pwn import *
 
 # context.log_level = 'DEBUG'
@@ -82,4 +84,4 @@ p.sendline(r0p)
 
 p.recv(1024)
 
-print 'Flag:', p.recv(1024)
+log.info("Flag: {p.recv(1024).decode()}")

